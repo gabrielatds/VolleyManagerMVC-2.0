@@ -8,10 +8,12 @@ namespace VolleyMVC.Models
     public class Acao
     {
         public int Id { get; set; }
-        public Jogador Jogador { get; set; }
-        public int JogadorId { get; set; }
+
         public Ponto Ponto { get; set; }
         public int PontoId { get; set; }
+        public bool Mandante { get; set; }
+        public Jogador Jogador { get; set; }
+        public int JogadorId { get; set; }
         public char Movimento { get; set; }
         public int Origem { get; set; }
         public int Destino { get; set; }
