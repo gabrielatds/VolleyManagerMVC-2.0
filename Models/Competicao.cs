@@ -5,12 +5,13 @@ using System.Threading.Tasks;
 
 namespace VolleyMVC.Models
 {
-    public class Time
+    public class Competicao
     {
         public int Id { get; set; }
         public string Nome { get; set; }
-        public ICollection<Categoria> Categorias { get; set; } = new List<Categoria>();
+        public int Ano_Temporada { get; set; }
+        public Categoria Categoria { get; set; }
+        public int CategoriaId { get; set; }
         public ICollection<Partida> Partidas { get; set; } = new List<Partida>();
-
     }
 }

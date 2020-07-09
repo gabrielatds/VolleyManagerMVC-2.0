@@ -12,5 +12,6 @@ namespace VolleyMVC.Models
         public int Idade_Max { get; set; }
         public Time Time { get; set; }
         public int TimeId { get; set; }
+        public ICollection<Jogador> Jogadores { get; set; } = new List<Jogador>();
     }
 }
