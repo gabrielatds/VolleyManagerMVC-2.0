@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VolleyMVC.Data;
 
 namespace VolleyMVC.Migrations
 {
     [DbContext(typeof(VolleyMVCContext))]
-    partial class VolleyMVCContextModelSnapshot : ModelSnapshot
+    [Migration("20200710223827_Setima")]
+    partial class Setima
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -106,13 +108,9 @@ namespace VolleyMVC.Migrations
 
                     b.Property<string>("Rg");
 
-                    b.Property<int>("TimeId");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CategoriaId");
-
-                    b.HasIndex("TimeId");
 
                     b.ToTable("Jogador");
                 });
@@ -242,11 +240,6 @@ namespace VolleyMVC.Migrations
                     b.HasOne("VolleyMVC.Models.Categoria", "Categoria")
                         .WithMany("Jogadores")
                         .HasForeignKey("CategoriaId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("VolleyMVC.Models.Time", "Time")
-                        .WithMany()
-                        .HasForeignKey("TimeId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

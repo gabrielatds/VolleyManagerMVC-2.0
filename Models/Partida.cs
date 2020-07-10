@@ -8,7 +8,12 @@ namespace VolleyMVC.Models
     public class Partida
     {
         public int Id { get; set; }
-        public ICollection<PartidaTime> PartidaTimes { get; set; }
+        public Time Mandante { get; set; }
+        [System.ComponentModel.DataAnnotations.Schema.DatabaseGenerated(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.None)]
+        public int MandanteId { get; set; }
+        public Time Visitante { get; set; }
+        [System.ComponentModel.DataAnnotations.Schema.DatabaseGenerated(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.None)]
+        public int VisitanteId { get; set; }
         public Competicao Competicao { get; set; }
         public int CompeticaoId { get; set; }
         public int Num_Sets { get; set; }

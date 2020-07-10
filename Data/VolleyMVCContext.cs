@@ -22,6 +22,7 @@ namespace VolleyMVC.Data
         public DbSet<Acao> Acao { get; set; }
         public DbSet<Set> Set { get; set; }
         public DbSet<Ponto> Ponto { get; set; }
+        public DbSet<PartidaTime> PartidaTimes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

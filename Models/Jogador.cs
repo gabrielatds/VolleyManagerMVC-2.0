@@ -8,6 +8,8 @@ namespace VolleyMVC.Models
     public class Jogador
     {
         public int Id { get; set; }
+        public Time Time { get; set; }
+        public int TimeId { get; set; }
         public Categoria Categoria { get; set; }
         public int CategoriaId { get; set; }
         public string Nome { get; set; }
