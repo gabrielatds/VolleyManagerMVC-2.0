@@ -9,6 +9,6 @@ namespace VolleyMVC.Controllers
 {
     public class PartidasController : Controller
     {
-        private readonly PartidaService partidaService;
+        private readonly PartidaService _partidaService;
     }
 }

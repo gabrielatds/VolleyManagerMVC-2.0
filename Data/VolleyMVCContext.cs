@@ -9,7 +9,7 @@ namespace VolleyMVC.Data
 {
     public class VolleyMVCContext : DbContext
     {
-        public VolleyMVCContext (DbContextOptions<VolleyMVCContext> options)
+        public VolleyMVCContext(DbContextOptions<VolleyMVCContext> options)
             : base(options)
         {
         }
@@ -22,18 +22,17 @@ namespace VolleyMVC.Data
         public DbSet<Acao> Acao { get; set; }
         public DbSet<Set> Set { get; set; }
         public DbSet<Ponto> Ponto { get; set; }
-        public DbSet<PartidaTime> PartidaTimes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Categoria>().HasOne(x => x.Time).WithMany(x => x.Categorias).HasForeignKey(x => x.TimeId);
             modelBuilder.Entity<Time>().HasMany(x => x.Categorias).WithOne(x => x.Time);
             modelBuilder.Entity<Jogador>().HasOne(x => x.Categoria).WithMany(x => x.Jogadores).HasForeignKey(x => x.CategoriaId);
-            modelBuilder.Entity<Partida>().HasOne(x => x.Competicao).WithMany(x => x.Partidas).HasForeignKey(x => x.CompeticaoId);
+            modelBuilder.Entity<Partida>().HasOne(x => x.Mandante).WithMany(x => x.Partidas).HasForeignKey(x => x.MandanteId);
             modelBuilder.Entity<Competicao>().HasMany(x => x.Partidas).WithOne(x => x.Competicao);
 
-            modelBuilder.Entity<PartidaTime>().HasKey(x => new { x.PartidaId, x.TimeId });
         }
 
     }
 }
+    
