@@ -13,5 +13,17 @@ namespace VolleyMVC.Models
         public Categoria Categoria { get; set; }
         public int CategoriaId { get; set; }
         public ICollection<Partida> Partidas { get; set; } = new List<Partida>();
+
+        public Competicao()
+        {
+
+        }
+
+        public Competicao(string nome, int ano_Temporada, Categoria categoria)
+        {
+            Nome = nome;
+            Ano_Temporada = ano_Temporada;
+            Categoria = categoria;
+        }
     }
 }

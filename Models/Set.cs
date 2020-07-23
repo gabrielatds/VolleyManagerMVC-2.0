@@ -14,5 +14,17 @@ namespace VolleyMVC.Models
         public int PontosMandante { get; set; }
         public int PontosVisitante { get; set; }
         public ICollection<Ponto> Pontos { get; set; } = new List<Ponto>();
+
+        public Set()
+        {
+
+        }
+        public Set(Partida partida, int num_Sets, int pontosMandante, int pontosVisitante)
+        {
+            Partida = partida;
+            Num_Sets = num_Sets;
+            PontosMandante = pontosMandante;
+            PontosVisitante = pontosVisitante;
+        }
     }
 }

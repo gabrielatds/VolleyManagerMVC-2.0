@@ -20,5 +20,18 @@ namespace VolleyMVC.Models
         public ICollection<Set> Sets { get; set; } = new List<Set>();
         public char OpcaoLancamento { get; set; }
 
+        public Partida()
+        {
+
+        }
+
+        public Partida(Time mandante, Time visitante, Competicao competicao, int num_Sets, char opcaoLancamento)
+        {
+            Mandante = mandante;
+            Visitante = visitante;
+            Competicao = competicao;
+            Num_Sets = num_Sets;
+            OpcaoLancamento = opcaoLancamento;
+        }
     }
 }
